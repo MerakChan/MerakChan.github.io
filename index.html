@@ -145,107 +145,6 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2025/02/26/Hexo%E4%B8%BB%E9%A2%98%E9%83%A8%E7%BD%B2/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Merak Chan">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Merak Chan的技术博客">
-      <meta itemprop="description" content="Stay Gold, Pony Boy!!!">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Merak Chan的技术博客">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2025/02/26/Hexo%E4%B8%BB%E9%A2%98%E9%83%A8%E7%BD%B2/" class="post-title-link" itemprop="url">Hexo博客部署</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-      
-
-      <time title="创建时间：2025-02-26 00:12:02 / 修改时间：20:06:45" itemprop="dateCreated datePublished" datetime="2025-02-26T00:12:02+08:00">2025-02-26</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/hexo%E4%BD%BF%E7%94%A8/" itemprop="url" rel="index"><span itemprop="name">hexo使用</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>要更换 Hexo 主题为 <strong>Next</strong>，你可以按照以下步骤进行：</p>
-<h3 id="1-安装-Next-主题"><a href="#1-安装-Next-主题" class="headerlink" title="1. 安装 Next 主题"></a>1. 安装 Next 主题</h3><p>你可以选择以下两种方式中的任意一种来安装 <strong>Hexo Theme Next</strong>：</p>
-<h4 id="方法一：使用-npm-安装"><a href="#方法一：使用-npm-安装" class="headerlink" title="方法一：使用 npm 安装"></a>方法一：使用 npm 安装</h4><p>在你的 Hexo 站点目录下，运行以下命令：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> hexo-site</span><br><span class="line">npm install hexo-theme-next</span><br></pre></td></tr></table></figure>
-
-<h4 id="方法二：通过-Git-克隆主题"><a href="#方法二：通过-Git-克隆主题" class="headerlink" title="方法二：通过 Git 克隆主题"></a>方法二：通过 Git 克隆主题</h4><p>如果你更喜欢手动克隆主题的仓库，可以运行以下命令：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> hexo-site</span><br><span class="line">git <span class="built_in">clone</span> https://github.com/next-theme/hexo-theme-next themes/next</span><br></pre></td></tr></table></figure>
-
-<p>这会将 Hexo Next 主题克隆到 <code>themes/next</code> 文件夹中。</p>
-<h3 id="2-配置-Hexo-使用-Next-主题"><a href="#2-配置-Hexo-使用-Next-主题" class="headerlink" title="2. 配置 Hexo 使用 Next 主题"></a>2. 配置 Hexo 使用 Next 主题</h3><p>安装完主题后，你需要告诉 Hexo 使用 <strong>Next</strong> 作为主题。在 <code>hexo-site/_config.yml</code> 配置文件中，找到 <code>theme</code> 配置项，并将其设置为 <code>next</code>：</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">theme:</span> <span class="string">next</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="3-生成并查看博客"><a href="#3-生成并查看博客" class="headerlink" title="3. 生成并查看博客"></a>3. 生成并查看博客</h3><p>安装并配置好主题后，你可以使用以下命令生成博客并启动 Hexo 服务器，查看主题效果：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g</span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure>
-
-<p>然后，打开浏览器并访问 <code>http://localhost:4000</code>，你应该能够看到使用 <strong>Next</strong> 主题的博客页面。</p>
-<h3 id="4-可选：自定义-Next-主题"><a href="#4-可选：自定义-Next-主题" class="headerlink" title="4. 可选：自定义 Next 主题"></a>4. 可选：自定义 Next 主题</h3><p>Next 主题是一个非常灵活和可定制的主题，你可以根据需要修改主题的配置文件，通常位于 <code>themes/next/_config.yml</code> 中。你可以在这里调整主题的样式、布局、颜色等。</p>
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><ol>
-<li>安装 Hexo Next 主题：通过 npm 或 git 克隆。</li>
-<li>在 <code>_config.yml</code> 中设置 <code>theme: next</code>。</li>
-<li>生成并启动博客查看效果。</li>
-</ol>
-<p>更详细的安装步骤和配置选项，可以参考 <a target="_blank" rel="noopener" href="https://theme-next.js.org/">Hexo Theme Next 官方文档</a>。</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
     <link itemprop="mainEntityOfPage" href="http://example.com/2025/02/26/Prompt%20Engineering/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -516,7 +415,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2025/02/25/hello-world/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/07/26/Hexo%E4%B8%BB%E9%A2%98%E9%83%A8%E7%BD%B2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -534,7 +433,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2025/02/25/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
+          <a href="/2023/07/26/Hexo%E4%B8%BB%E9%A2%98%E9%83%A8%E7%BD%B2/" class="post-title-link" itemprop="url">Hexo Next主题下载</a>
         </h2>
 
         <div class="post-meta-container">
@@ -545,14 +444,14 @@
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2025-02-25 23:36:44" itemprop="dateCreated datePublished" datetime="2025-02-25T23:36:44+08:00">2025-02-25</time>
+      <time title="创建时间：2023-07-26 00:12:02" itemprop="dateCreated datePublished" datetime="2023-07-26T00:12:02+08:00">2023-07-26</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-02-26 20:08:35" itemprop="dateModified" datetime="2025-02-26T20:08:35+08:00">2025-02-26</time>
+      <time title="修改时间：2025-02-26 22:27:23" itemprop="dateModified" datetime="2025-02-26T22:27:23+08:00">2025-02-26</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -574,19 +473,140 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+          <p>要更换 Hexo 主题为 <strong>Next</strong>，你可以按照以下步骤进行：</p>
+<h3 id="1-安装-Next-主题"><a href="#1-安装-Next-主题" class="headerlink" title="1. 安装 Next 主题"></a>1. 安装 Next 主题</h3><p>你可以选择以下两种方式中的任意一种来安装 <strong>Hexo Theme Next</strong>：</p>
+<h4 id="方法一：使用-npm-安装"><a href="#方法一：使用-npm-安装" class="headerlink" title="方法一：使用 npm 安装"></a>方法一：使用 npm 安装</h4><p>在你的 Hexo 站点目录下，运行以下命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> hexo-site</span><br><span class="line">npm install hexo-theme-next</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<h4 id="方法二：通过-Git-克隆主题"><a href="#方法二：通过-Git-克隆主题" class="headerlink" title="方法二：通过 Git 克隆主题"></a>方法二：通过 Git 克隆主题</h4><p>如果你更喜欢手动克隆主题的仓库，可以运行以下命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> hexo-site</span><br><span class="line">git <span class="built_in">clone</span> https://github.com/next-theme/hexo-theme-next themes/next</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>这会将 Hexo Next 主题克隆到 <code>themes/next</code> 文件夹中。</p>
+<h3 id="2-配置-Hexo-使用-Next-主题"><a href="#2-配置-Hexo-使用-Next-主题" class="headerlink" title="2. 配置 Hexo 使用 Next 主题"></a>2. 配置 Hexo 使用 Next 主题</h3><p>安装完主题后，你需要告诉 Hexo 使用 <strong>Next</strong> 作为主题。在 <code>hexo-site/_config.yml</code> 配置文件中，找到 <code>theme</code> 配置项，并将其设置为 <code>next</code>：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">theme:</span> <span class="string">next</span></span><br></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<h3 id="3-生成并查看博客"><a href="#3-生成并查看博客" class="headerlink" title="3. 生成并查看博客"></a>3. 生成并查看博客</h3><p>安装并配置好主题后，你可以使用以下命令生成博客并启动 Hexo 服务器，查看主题效果：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g</span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+<p>然后，打开浏览器并访问 <code>http://localhost:4000</code>，你应该能够看到使用 <strong>Next</strong> 主题的博客页面。</p>
+<h3 id="4-可选：自定义-Next-主题"><a href="#4-可选：自定义-Next-主题" class="headerlink" title="4. 可选：自定义 Next 主题"></a>4. 可选：自定义 Next 主题</h3><p>Next 主题是一个非常灵活和可定制的主题，你可以根据需要修改主题的配置文件，通常位于 <code>themes/next/_config.yml</code> 中。你可以在这里调整主题的样式、布局、颜色等。</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><ol>
+<li>安装 Hexo Next 主题：通过 npm 或 git 克隆。</li>
+<li>在 <code>_config.yml</code> 中设置 <code>theme: next</code>。</li>
+<li>生成并启动博客查看效果。</li>
+</ol>
+<p>更详细的安装步骤和配置选项，可以参考 <a target="_blank" rel="noopener" href="https://theme-next.js.org/">Hexo Theme Next 官方文档</a>。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/07/26/hexo%E6%A0%87%E7%AD%BE%E8%AE%BE%E7%BD%AE/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Merak Chan">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Merak Chan的技术博客">
+      <meta itemprop="description" content="Stay Gold, Pony Boy!!!">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Merak Chan的技术博客">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2023/07/26/hexo%E6%A0%87%E7%AD%BE%E8%AE%BE%E7%BD%AE/" class="post-title-link" itemprop="url">hexo如何给文章设置标签？</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2023-07-26 00:00:00" itemprop="dateCreated datePublished" datetime="2023-07-26T00:00:00+08:00">2023-07-26</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2025-02-26 19:41:57" itemprop="dateModified" datetime="2025-02-26T19:41:57+08:00">2025-02-26</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/hexo%E4%BD%BF%E7%94%A8/" itemprop="url" rel="index"><span itemprop="name">hexo使用</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h3 id="给文章创建“标签”选项"><a href="#给文章创建“标签”选项" class="headerlink" title="给文章创建“标签”选项"></a><strong>给文章创建“标签”选项</strong></h3><h4 id="1-生成“标签”页面并添加type属性"><a href="#1-生成“标签”页面并添加type属性" class="headerlink" title="1 生成“标签”页面并添加type属性"></a><strong>1 生成“标签”页面并添加<code>type</code>属性</strong></h4><ol>
+<li>打开命令行，进入博客根目录，执行以下命令生成标签页面：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new page tags</span><br></pre></td></tr></table></figure></li>
+<li>打开生成的<code>index.md</code>文件，默认内容如下：<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: 标签</span><br><span class="line"><span class="section">date: 2017-05-27 14:22:08</span></span><br><span class="line"><span class="section">---</span></span><br></pre></td></tr></table></figure></li>
+<li>添加<code>type: &quot;tags&quot;</code>属性，修改后内容如下：<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: 标签</span><br><span class="line">date: 2017-05-27 14:22:08</span><br><span class="line"><span class="section">type: &quot;tags&quot;</span></span><br><span class="line"><span class="section">---</span></span><br></pre></td></tr></table></figure></li>
+<li>保存并关闭文件。</li>
+</ol>
+<h4 id="2-给文章添加tags属性"><a href="#2-给文章添加tags属性" class="headerlink" title="2 给文章添加tags属性"></a><strong>2 给文章添加<code>tags</code>属性</strong></h4><ol>
+<li>打开需要添加标签的文章（Markdown文件）。</li>
+<li>在文章头部添加<code>tags</code>属性。例如：<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: jQuery对表单的操作及更多应用</span><br><span class="line">date: 2017-05-26 12:12:57</span><br><span class="line">categories: </span><br><span class="line"><span class="bullet">  -</span> web前端</span><br><span class="line">tags:</span><br><span class="line"><span class="bullet">  -</span> jQuery</span><br><span class="line"><span class="bullet">  -</span> 表格</span><br><span class="line"><span class="section">  - 表单验证</span></span><br><span class="line"><span class="section">---</span></span><br></pre></td></tr></table></figure></li>
+<li>保存文件后，点击博客首页的“标签”选项，即可查看该标签下的所有文章。</li>
+</ol>
+<hr>
+<h3 id="优化新建文章的模板"><a href="#优化新建文章的模板" class="headerlink" title="优化新建文章的模板"></a><strong>优化新建文章的模板</strong></h3><ol>
+<li>打开<code>scaffolds/post.md</code>文件（位于博客根目录下的<code>scaffolds</code>文件夹）。</li>
+<li>在<code>tags:</code>上方添加<code>categories:</code>，修改后内容如下：<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: &#123;&#123; title &#125;&#125;</span><br><span class="line">date: &#123;&#123; date &#125;&#125;</span><br><span class="line">categories:</span><br><span class="line"><span class="section">tags:</span></span><br><span class="line"><span class="section">---</span></span><br></pre></td></tr></table></figure></li>
+<li>保存文件后，每次执行<code>hexo new 文章名</code>命令生成的新文章都会默认包含<code>categories:</code>项。</li>
+</ol>
+<hr>
+<h3 id="总结"><a href="#总结" class="headerlink" title="** 总结**"></a>** 总结**</h3><ul>
+<li><strong>分类与标签的区别</strong>：<ul>
+<li>分类用于对文章进行层级化管理，一篇文章只能属于一个分类。</li>
+<li>标签用于对文章进行多维度标记，一篇文章可以有多个标签。</li>
+</ul>
+</li>
+<li><strong>模板优化</strong>：通过修改<code>scaffolds/post.md</code>文件，可以为新建文章添加默认属性，提升效率。</li>
+</ul>
+<hr>
 
       
     </div>
@@ -718,7 +738,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/07/26/hexo%E6%A0%87%E7%AD%BE%E8%AE%BE%E7%BD%AE/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/0202/07/26/hexo%E9%83%A8%E7%BD%B2%E6%8A%A5%E9%94%99/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -736,7 +756,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2023/07/26/hexo%E6%A0%87%E7%AD%BE%E8%AE%BE%E7%BD%AE/" class="post-title-link" itemprop="url">hexo如何给文章设置标签？</a>
+          <a href="/0202/07/26/hexo%E9%83%A8%E7%BD%B2%E6%8A%A5%E9%94%99/" class="post-title-link" itemprop="url">hexo部署报错</a>
         </h2>
 
         <div class="post-meta-container">
@@ -747,14 +767,14 @@
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2023-07-26 00:00:00" itemprop="dateCreated datePublished" datetime="2023-07-26T00:00:00+08:00">2023-07-26</time>
+      <time title="创建时间：0202-07-26 22:29:50" itemprop="dateCreated datePublished" datetime="0202-07-26T22:29:50+08:05">0202-07-26</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-02-26 19:41:57" itemprop="dateModified" datetime="2025-02-26T19:41:57+08:00">2025-02-26</time>
+      <time title="修改时间：2025-02-26 22:31:11" itemprop="dateModified" datetime="2025-02-26T22:31:11+08:00">2025-02-26</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -776,34 +796,35 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h3 id="给文章创建“标签”选项"><a href="#给文章创建“标签”选项" class="headerlink" title="给文章创建“标签”选项"></a><strong>给文章创建“标签”选项</strong></h3><h4 id="1-生成“标签”页面并添加type属性"><a href="#1-生成“标签”页面并添加type属性" class="headerlink" title="1 生成“标签”页面并添加type属性"></a><strong>1 生成“标签”页面并添加<code>type</code>属性</strong></h4><ol>
-<li>打开命令行，进入博客根目录，执行以下命令生成标签页面：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new page tags</span><br></pre></td></tr></table></figure></li>
-<li>打开生成的<code>index.md</code>文件，默认内容如下：<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: 标签</span><br><span class="line"><span class="section">date: 2017-05-27 14:22:08</span></span><br><span class="line"><span class="section">---</span></span><br></pre></td></tr></table></figure></li>
-<li>添加<code>type: &quot;tags&quot;</code>属性，修改后内容如下：<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: 标签</span><br><span class="line">date: 2017-05-27 14:22:08</span><br><span class="line"><span class="section">type: &quot;tags&quot;</span></span><br><span class="line"><span class="section">---</span></span><br></pre></td></tr></table></figure></li>
-<li>保存并关闭文件。</li>
-</ol>
-<h4 id="2-给文章添加tags属性"><a href="#2-给文章添加tags属性" class="headerlink" title="2 给文章添加tags属性"></a><strong>2 给文章添加<code>tags</code>属性</strong></h4><ol>
-<li>打开需要添加标签的文章（Markdown文件）。</li>
-<li>在文章头部添加<code>tags</code>属性。例如：<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: jQuery对表单的操作及更多应用</span><br><span class="line">date: 2017-05-26 12:12:57</span><br><span class="line">categories: </span><br><span class="line"><span class="bullet">  -</span> web前端</span><br><span class="line">tags:</span><br><span class="line"><span class="bullet">  -</span> jQuery</span><br><span class="line"><span class="bullet">  -</span> 表格</span><br><span class="line"><span class="section">  - 表单验证</span></span><br><span class="line"><span class="section">---</span></span><br></pre></td></tr></table></figure></li>
-<li>保存文件后，点击博客首页的“标签”选项，即可查看该标签下的所有文章。</li>
-</ol>
-<hr>
-<h3 id="优化新建文章的模板"><a href="#优化新建文章的模板" class="headerlink" title="优化新建文章的模板"></a><strong>优化新建文章的模板</strong></h3><ol>
-<li>打开<code>scaffolds/post.md</code>文件（位于博客根目录下的<code>scaffolds</code>文件夹）。</li>
-<li>在<code>tags:</code>上方添加<code>categories:</code>，修改后内容如下：<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: &#123;&#123; title &#125;&#125;</span><br><span class="line">date: &#123;&#123; date &#125;&#125;</span><br><span class="line">categories:</span><br><span class="line"><span class="section">tags:</span></span><br><span class="line"><span class="section">---</span></span><br></pre></td></tr></table></figure></li>
-<li>保存文件后，每次执行<code>hexo new 文章名</code>命令生成的新文章都会默认包含<code>categories:</code>项。</li>
-</ol>
-<hr>
-<h3 id="总结"><a href="#总结" class="headerlink" title="** 总结**"></a>** 总结**</h3><ul>
-<li><strong>分类与标签的区别</strong>：<ul>
-<li>分类用于对文章进行层级化管理，一篇文章只能属于一个分类。</li>
-<li>标签用于对文章进行多维度标记，一篇文章可以有多个标签。</li>
-</ul>
-</li>
-<li><strong>模板优化</strong>：通过修改<code>scaffolds/post.md</code>文件，可以为新建文章添加默认属性，提升效率。</li>
-</ul>
-<hr>
+          <p>遇到的错误提示 <code>fatal: unable to access &#39;https://github.com/MerakChan/MerakChan.github.io.git/&#39;: OpenSSL SSL_read: SSL_ERROR_SYSCALL, errno 0</code> 通常是由于 SSL 连接问题导致无法访问 GitHub，具体来说，可能是网络、证书或者 Git 配置方面的问题。</p>
+<p>以下是解决方法：</p>
+<h3 id="1-检查网络连接"><a href="#1-检查网络连接" class="headerlink" title="1. 检查网络连接"></a>1. 检查网络连接</h3><p>首先，确保你可以正常访问 GitHub。如果你处在网络环境限制较多的地区（如国内），你可能需要使用代理服务来解决网络访问问题。你可以通过以下命令测试网络连接：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ping github.com</span><br></pre></td></tr></table></figure>
 
+<h3 id="2-检查-Git-配置"><a href="#2-检查-Git-配置" class="headerlink" title="2. 检查 Git 配置"></a>2. 检查 Git 配置</h3><p>Git 可能因为 SSL 配置的问题导致连接失败。可以尝试禁用 SSL 验证来进行测试，查看是否是 SSL 证书的问题。</p>
+<p>执行以下命令禁用 SSL 验证（仅用于测试）：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global http.sslVerify <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+
+<p>然后重新尝试部署命令。</p>
+<h3 id="3-切换到-SSH-方式"><a href="#3-切换到-SSH-方式" class="headerlink" title="3. 切换到 SSH 方式"></a>3. 切换到 SSH 方式</h3><p>如果 HTTPS 连接仍然失败，你可以尝试切换为 SSH 方式进行部署。首先，确保你已经生成了 SSH 密钥，并将公钥添加到你的 GitHub 账户中。</p>
+<ol>
+<li><p>生成 SSH 密钥（如果你还没有生成的话）：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -b 4096 -C <span class="string">&quot;your_email@example.com&quot;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>将 SSH 公钥添加到 GitHub 账户中。你可以在终端中使用以下命令查看公钥：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cat</span> ~/.ssh/id_rsa.pub</span><br></pre></td></tr></table></figure>
+
+<p>然后将输出内容添加到 GitHub 账户的 <strong>Settings -&gt; SSH and GPG keys</strong> 中。</p>
+</li>
+<li><p>修改 Hexo 配置中的 Git 地址，使用 SSH 而非 HTTPS：</p>
+<p>编辑 <code>deploy</code> 配置文件，通常在 <code>/_config.yml</code> 中修改：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">git@github.com:MerakChan/MerakChan.github.io.git</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">main</span></span><br></pre></td></tr></table></figure></li>
+</ol>
+<h3 id="4-更新-Hexo-和-Hexo-deployer-git"><a href="#4-更新-Hexo-和-Hexo-deployer-git" class="headerlink" title="4. 更新 Hexo 和 Hexo-deployer-git"></a>4. 更新 Hexo 和 Hexo-deployer-git</h3><p>如果以上方法无效，可以尝试更新 Hexo 和 <code>hexo-deployer-git</code> 插件到最新版本：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm update hexo</span><br><span class="line">npm update hexo-deployer-git</span><br></pre></td></tr></table></figure>
+
+<h3 id="5-重新部署"><a href="#5-重新部署" class="headerlink" title="5. 重新部署"></a>5. 重新部署</h3><p>更新配置后，执行 Hexo 部署命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
       
     </div>
 
