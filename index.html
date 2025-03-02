@@ -113,13 +113,13 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">6</span>
+          <span class="site-state-item-count">9</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/categories/">
-        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
   </nav>
@@ -136,6 +136,1171 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2025/03/02/SpringBoot/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Merak Chan">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Merak Chan的技术博客">
+      <meta itemprop="description" content="Stay Gold, Pony Boy!!!">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Merak Chan的技术博客">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2025/03/02/SpringBoot/" class="post-title-link" itemprop="url">SpringBoot</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2025-03-02 14:29:26 / 修改时间：14:30:18" itemprop="dateCreated datePublished" datetime="2025-03-02T14:29:26+08:00">2025-03-02</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Java%E6%A0%B8%E5%BF%83%E5%BC%80%E5%8F%91/" itemprop="url" rel="index"><span itemprop="name">Java核心开发</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="1-基础介绍"><a href="#1-基础介绍" class="headerlink" title="1. 基础介绍"></a>1. 基础介绍</h2><p>让spring更简单（减少XML配置）的快速开发框架，提供核心特性（自动装配、起步依赖等），专注于业务逻辑</p>
+<hr>
+<h2 id="2-核心功能详解"><a href="#2-核心功能详解" class="headerlink" title="2. 核心功能详解"></a>2. 核心功能详解</h2><h3 id="2-1-起步依赖（starters）"><a href="#2-1-起步依赖（starters）" class="headerlink" title="2.1 起步依赖（starters）"></a><strong>2.1 起步依赖（starters）</strong></h3><ul>
+<li>sprinboot以<code>spring-boot-starter-*</code>命名的依赖集合，封装了特定功能所需的库或组件s及版本。</li>
+</ul>
+<p><strong>作用：</strong>简化配置与版本统一管理<br>解决依赖冲突问题，简化Maven&#x2F;Gradle配置，实现“开箱即用”，同时利用 Spring Boot 的自动配置（Auto-Configuration）功能快速搭建应用，起步依赖在内部维护了各组件的兼容性和版本匹配，借助 Spring Boot 的 BOM机制，确保项目中所有依赖的版本能够协同工作。</p>
+<p>BOM:（Bill of Materials物料清单，实际上就是一个普通的pom文件，在pom文件中只定义dependencyManagement版本依赖管理，用于管理项目依赖的所有jar包；有利于包版本的统一，降低由于版本不一致导致的冲突；有利于降低配置的复杂度，提升开发效率）</p>
+<p><strong>常见起步依赖：</strong></p>
+<ul>
+<li><strong>spring-boot-starter</strong>：基础依赖，包含日志、Spring Core 等常用模块。</li>
+<li><strong>spring-boot-starter-web</strong>：构建基于 Servlet 的 Web 应用（如 RESTful API），内置 Tomcat&#x2F;Jetty&#x2F;Undertow。</li>
+<li><strong>spring-boot-starter-data-jpa</strong>：集成 Spring Data JPA 和 Hibernate，用于数据库操作和 ORM。</li>
+<li><strong>spring-boot-starter-security</strong>：快速集成 Spring Security，实现认证与授权。</li>
+<li><strong>spring-boot-starter-test</strong>：测试相关依赖，包括 JUnit、Mockito、Spring Test 等，方便编写单元和集成测试。</li>
+<li><strong>spring-boot-starter-actuator</strong>：提供应用监控和管理端点，便于实时监控运行状态。</li>
+</ul>
+<p><strong>应用场景：</strong></p>
+<ul>
+<li><p><strong>快速构建微服务架构</strong></p>
+<p>  使用 spring-boot-starter-web、spring-boot-starter-data-jpa 等起步依赖，快速构建 RESTful 服务，并结合 Spring Cloud 构建分布式系统。</p>
+</li>
+<li><p><strong>企业级 Web 应用开发</strong></p>
+<p>  利用起步依赖构建企业级后台管理系统或门户网站，减少项目初始化配置，提高开发效率。</p>
+</li>
+<li><p><strong>快速原型开发与验证</strong></p>
+<p>  利用自动配置和起步依赖，快速搭建应用原型，进行需求验证和快速迭代。</p>
+</li>
+<li><h2 id="运维监控与管理-结合-spring-boot-starter-actuator，实现对应用的实时健康检查、指标监控和管理端点，提升运维效率。"><a href="#运维监控与管理-结合-spring-boot-starter-actuator，实现对应用的实时健康检查、指标监控和管理端点，提升运维效率。" class="headerlink" title="运维监控与管理  结合 spring-boot-starter-actuator，实现对应用的实时健康检查、指标监控和管理端点，提升运维效率。
+  "></a><strong>运维监控与管理</strong><br><br>  结合 spring-boot-starter-actuator，实现对应用的实时健康检查、指标监控和管理端点，提升运维效率。
+  </h2></li>
+</ul>
+<h3 id="2-2-自动配置（Auto-Configuration）"><a href="#2-2-自动配置（Auto-Configuration）" class="headerlink" title="2.2 自动配置（Auto-Configuration）"></a><strong>2.2 自动配置（Auto-Configuration）</strong></h3><ul>
+<li><p><strong>核心原理：</strong>约定优于配置</p>
+<p>  Spring Boot基于类路径中的依赖库（META-INFO下的那个）自动配置Bean，利用条件化注解（如<code>@ConditionalOnClass</code>、<code>@ConditionalOnProperty</code>）判断是否启用特定配置。例如，引入<code>spring-boot-starter-web</code>时，会自动配置嵌入式Tomcat和Spring MVC组件</p>
+<p>  流程</p>
+<p>  Spring Boot 启动 </p>
+<p>  —&gt; 加载 <code>@SpringBootApplication</code> (隐含了 <code>@EnableAutoConfiguration</code>，触发自动配置机制)<br>  —&gt; 自动配置类的加载,<br>  通过 <strong>SpringFactoriesLoader</strong> 读取类路径下 <code>META-INF/spring.factories</code> 文件中定义的配置类列表，并逐一加载</p>
+<p>   <strong>条件注解驱动</strong>：自动配置类上通常会结合一系列条件注解,例如：</p>
+<ul>
+<li><code>@ConditionalOnClass</code>：当某个类存在时生效。</li>
+<li><code>@ConditionalOnMissingBean</code>：当容器中不存在某个 Bean 时创建。</li>
+<li><code>@ConditionalOnProperty</code>：依据配置文件中的属性值决定是否生效。</li>
+</ul>
+<p>  <strong>优先级与覆盖机制</strong>：自动配置的 Bean 定义默认可以被用户自定义的 Bean 覆盖。开发者可以通过排除特定的自动配置类（@SpringBootApplication(exclude&#x3D;…)）或在配置文件中设定属性来控制自动配置的行为。
+  </p>
+</li>
+<li><h2 id="应用场景-快速启动项目：利用自动配置，开发者可以不用关注繁琐的环境搭建，直接关注业务逻辑开发，如构建-RESTful-API、微服务等。-企业级集成：在大型企业应用中，通过自动配置快速整合常用组件（如数据源、缓存、消息队列等），并能灵活覆盖默认配置以满足特定业务需求。-原型开发和快速迭代：自动配置使项目初期能够迅速启动，同时在后续需要个性化配置时，开发者可以方便地覆盖自动配置的默认行为，实现更精细的调优。-组件库与平台开发：框架或组件库的开发者可以利用自动配置为用户提供开箱即用的功能，并预设一系列合理的默认值。"><a href="#应用场景-快速启动项目：利用自动配置，开发者可以不用关注繁琐的环境搭建，直接关注业务逻辑开发，如构建-RESTful-API、微服务等。-企业级集成：在大型企业应用中，通过自动配置快速整合常用组件（如数据源、缓存、消息队列等），并能灵活覆盖默认配置以满足特定业务需求。-原型开发和快速迭代：自动配置使项目初期能够迅速启动，同时在后续需要个性化配置时，开发者可以方便地覆盖自动配置的默认行为，实现更精细的调优。-组件库与平台开发：框架或组件库的开发者可以利用自动配置为用户提供开箱即用的功能，并预设一系列合理的默认值。" class="headerlink" title="应用场景  快速启动项目：利用自动配置，开发者可以不用关注繁琐的环境搭建，直接关注业务逻辑开发，如构建 RESTful API、微服务等。  企业级集成：在大型企业应用中，通过自动配置快速整合常用组件（如数据源、缓存、消息队列等），并能灵活覆盖默认配置以满足特定业务需求。  原型开发和快速迭代：自动配置使项目初期能够迅速启动，同时在后续需要个性化配置时，开发者可以方便地覆盖自动配置的默认行为，实现更精细的调优。  组件库与平台开发：框架或组件库的开发者可以利用自动配置为用户提供开箱即用的功能，并预设一系列合理的默认值。
+  "></a><strong>应用场景</strong><br><br>  <strong>快速启动项目：</strong>利用自动配置，开发者可以不用关注繁琐的环境搭建，直接关注业务逻辑开发，如构建 RESTful API、微服务等。<br><br>  <strong>企业级集成：</strong>在大型企业应用中，通过自动配置快速整合常用组件（如数据源、缓存、消息队列等），并能灵活覆盖默认配置以满足特定业务需求。<br><br>  <strong>原型开发和快速迭代：</strong>自动配置使项目初期能够迅速启动，同时在后续需要个性化配置时，开发者可以方便地覆盖自动配置的默认行为，实现更精细的调优。<br><br>  <strong>组件库与平台开发：</strong>框架或组件库的开发者可以利用自动配置为用户提供开箱即用的功能，并预设一系列合理的默认值。
+  </h2></li>
+</ul>
+<h3 id="2-3-嵌入式服务器"><a href="#2-3-嵌入式服务器" class="headerlink" title="2.3 嵌入式服务器"></a><strong>2.3 嵌入式服务器</strong></h3><ul>
+<li>内置 Servlet容器（Tomcat默认、Jetty、Undertow通过依赖切换即可更换无需额外配置），使得应用可以直接以 JAR 包形式启动，无需单独部署到外部应用服务器。</li>
+<li><h2 id="特点-自包含：所有必需的服务器依赖已打包进应用，无需额外安装服务器-轻量化部署：简化了部署过程，便于微服务架构下的快速启动与扩展-可配置性：提供丰富的配置选项（如端口、线程池、连接数等），支持开发者通过配置文件或代码自定义服务器行为，如可以通过编写-Bean-或实现-WebServerFactoryCustomizer-接口来自定义服务器配置，例如修改线程池、最大连接数、SSL配置等。通过server-port指定端口，server-servlet-context-path设置上下文路径"><a href="#特点-自包含：所有必需的服务器依赖已打包进应用，无需额外安装服务器-轻量化部署：简化了部署过程，便于微服务架构下的快速启动与扩展-可配置性：提供丰富的配置选项（如端口、线程池、连接数等），支持开发者通过配置文件或代码自定义服务器行为，如可以通过编写-Bean-或实现-WebServerFactoryCustomizer-接口来自定义服务器配置，例如修改线程池、最大连接数、SSL配置等。通过server-port指定端口，server-servlet-context-path设置上下文路径" class="headerlink" title="特点:  自包含：所有必需的服务器依赖已打包进应用，无需额外安装服务器  轻量化部署：简化了部署过程，便于微服务架构下的快速启动与扩展  可配置性：提供丰富的配置选项（如端口、线程池、连接数等），支持开发者通过配置文件或代码自定义服务器行为，如可以通过编写 @Bean 或实现 WebServerFactoryCustomizer 接口来自定义服务器配置，例如修改线程池、最大连接数、SSL配置等。通过server.port指定端口，server.servlet.context-path设置上下文路径
+  "></a><strong>特点:</strong><br><br>  <strong>自包含</strong>：所有必需的服务器依赖已打包进应用，无需额外安装服务器<br><br>  <strong>轻量化部署</strong>：简化了部署过程，便于微服务架构下的快速启动与扩展<br><br>  <strong>可配置性</strong>：提供丰富的配置选项（如端口、线程池、连接数等），支持开发者通过配置文件或代码自定义服务器行为，如可以通过编写 <code>@Bean</code> 或实现 <code>WebServerFactoryCustomizer</code> 接口来自定义服务器配置，例如修改线程池、最大连接数、SSL配置等。通过<code>server.port</code>指定端口，<code>server.servlet.context-path</code>设置上下文路径
+  </h2></li>
+</ul>
+<h3 id="2-4-事务管理与数据访问"><a href="#2-4-事务管理与数据访问" class="headerlink" title="2.4 事务管理与数据访问"></a><strong>2.4 事务管理与数据访问</strong></h3><p><strong>Spring Boot 事务管理：</strong>事务保证了一组数据库操作要么全部成功，要么全部回滚，确保数据一致性。在 Spring Boot 中，事务管理通常由 Spring 提供的声明式事务管理实现。</p>
+<ul>
+<li><p><strong>声明式事务管理</strong></p>
+<ul>
+<li>通过 <code>@Transactional</code> 注解标识需要事务管理的方法或类，Spring 会在运行时自动创建事务代理。</li>
+<li>支持配置事务的传播行为（Propagation）、隔离级别（Isolation）、超时（Timeout）、只读属性以及回滚规则（Rollback Rules）。</li>
+</ul>
+</li>
+<li><p><strong>事务传播行为</strong></p>
+<ul>
+<li>例如 <code>REQUIRED</code>（默认，支持当前事务，没有则新建）、<code>REQUIRES_NEW</code>（强制新建事务）、<code>SUPPORTS</code>、<code>MANDATORY</code>、<code>NEVER</code>、<code>NOT_SUPPORTED</code> 等，决定嵌套调用时事务的传递方式。</li>
+</ul>
+</li>
+<li><p><strong>事务隔离级别</strong></p>
+<ul>
+<li>如 <code>READ_UNCOMMITTED</code>、<code>READ_COMMITTED</code>、<code>REPEATABLE_READ</code> 和 <code>SERIALIZABLE</code>，决定并发访问数据时的可见性和锁策略，平衡数据一致性与并发性能。</li>
+</ul>
+</li>
+<li><p><strong>回滚与提交</strong></p>
+<ul>
+<li>默认情况下，遇到 <code>RuntimeException</code> 或 <code>Error</code> 会触发回滚，其他异常（如 checked Exception）需要通过 <code>rollbackFor</code> 属性指定。</li>
+<li>可配置事务超时，防止长时间等待导致资源占用。</li>
+</ul>
+</li>
+<li><p><strong>应用场景</strong></p>
+<p>  <strong>业务逻辑的原子性</strong></p>
+<ul>
+<li>在涉及多个数据库操作的业务场景（如订单创建、支付、库存更新）中，确保数据操作要么全部成功，要么全部失败，避免数据不一致。</li>
+</ul>
+<p>  <strong>分布式事务处理</strong></p>
+<ul>
+<li>在微服务架构中，单体服务内可以使用 Spring 事务管理，而跨服务则可借助分布式事务框架（如 Seata、Atomikos）来处理复杂事务。</li>
+</ul>
+<p>  <strong>高并发与数据一致性要求</strong></p>
+<ul>
+<li>对于需要高并发访问和数据一致性要求高的业务（例如电商秒杀），合理配置事务隔离级别和传播行为能有效防止脏读、幻读等问题。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<p><strong>数据访问</strong></p>
+<ul>
+<li><strong>数据访问层架构</strong><ul>
+<li>Spring Boot 提供了多种数据访问方式，如 JDBC、Spring Data JPA、MyBatis 等。</li>
+<li>通过起步依赖（starter）快速集成数据库访问组件，并通过自动配置简化数据源、连接池和 ORM 框架的配置。</li>
+</ul>
+</li>
+<li><strong>Spring Data JPA</strong><ul>
+<li>利用 JPA 规范和 Hibernate 等实现 ORM，通过定义 Repository 接口实现 CRUD 操作和复杂查询。</li>
+<li>支持查询方法命名规则、JPQL、Criteria API 和原生 SQL。</li>
+</ul>
+</li>
+<li><strong>JDBC Template</strong><ul>
+<li>对于简单的 SQL 操作，JDBC Template 提供了便捷的数据库操作封装，减少了模板代码和异常处理负担。</li>
+</ul>
+</li>
+<li><strong>MyBatis</strong><ul>
+<li>另一种常用的数据访问框架，支持 XML 配置和注解方式编写 SQL，适合对 SQL 控制要求较高的场景。</li>
+</ul>
+</li>
+<li><strong>数据源配置与连接池</strong><ul>
+<li>Spring Boot 内置支持 HikariCP、Druid、Tomcat JDBC 等连接池，提供高性能和稳定性。</li>
+<li>通过配置文件灵活调整连接池参数，优化数据库连接管理。</li>
+</ul>
+</li>
+</ul>
+<p><strong>应用场景</strong></p>
+<ul>
+<li><strong>企业级 CRUD 应用</strong><ul>
+<li>通过 Spring Data JPA 快速实现数据库操作，适用于大部分 CRUD 应用和业务逻辑较为简单的场景。</li>
+</ul>
+</li>
+<li><strong>复杂业务查询</strong><ul>
+<li>对于需要灵活编写复杂 SQL 的场景，MyBatis 提供了更细粒度的控制，适合业务逻辑复杂或数据量较大的应用。</li>
+</ul>
+</li>
+<li><strong>高性能数据访问</strong><ul>
+<li>使用 JDBC Template 或高性能连接池（如 HikariCP）在高并发场景下有效管理数据库连接，保证系统性能。</li>
+</ul>
+</li>
+<li><strong>分布式数据访问</strong><ul>
+<li>在微服务架构中，各服务可能使用独立的数据源，Spring Boot 的数据访问方案能快速集成各类数据库，实现服务间数据隔离与整合。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="2-5-Actuator监控管理"><a href="#2-5-Actuator监控管理" class="headerlink" title="2.5 Actuator监控管理"></a><strong>2.5 Actuator监控管理</strong></h3><ul>
+<li>提供生产级监控端点（Endpoints），如<code>/health</code>（健康检查）、<code>/metrics</code>（性能指标）、<code>/info</code>（应用信息）</li>
+<li>支持<strong>自定义端点</strong>，集成Prometheus、Grafana等工具实现可视化监控，通常结合Spring Security保护敏感端点进行<strong>安全配置</strong></li>
+</ul>
+<hr>
+<h3 id="2-6-配置管理"><a href="#2-6-配置管理" class="headerlink" title="2.6 配置管理"></a><strong>2.6 配置管理</strong></h3><ul>
+<li>通过<code>application-&#123;profile&#125;.properties</code>或<code>application-&#123;profile&#125;.yml</code>区分开发、测试、生产环境，使用<code>spring.profiles.active</code>激活</li>
+<li><strong>优先级</strong>：命令行参数 &gt; 系统变量 &gt; 外部配置文件 &gt; 内置配置文件</li>
+<li><strong>动态配置</strong>：支持结合Spring Cloud Config实现分布式配置中心</li>
+</ul>
+<hr>
+<h3 id="2-7-开发工具与热部署"><a href="#2-7-开发工具与热部署" class="headerlink" title="2.7 开发工具与热部署"></a>2.7 开发工具与热部署</h3><ul>
+<li>Spring Boot DevTools 提供自动重启、热部署、缓存清除等功能，帮助开发者快速迭代</li>
+<li><a target="_blank" rel="noopener" href="https://developer.aliyun.com/article/1310282">Spring Boot之Spring-devtools热部署：实现快速开发与调试-阿里云开发者社区</a></li>
+</ul>
+<hr>
+<h3 id="2-8-日志系统"><a href="#2-8-日志系统" class="headerlink" title="2.8 日志系统"></a>2.8 日志系统</h3><p>Spring Boot 默认集成了 <strong>Logback</strong> 作为日志实现，同时也支持 Log4j2、JUL（Java Util Logging）等。通过 Spring Boot 起步依赖（spring-boot-starter-logging）自动引入相关依赖，实现“开箱即用”的日志功能</p>
+<p>Spring Boot 通过自动配置，提供默认的日志配置，允许开发者在 <code>application.properties</code> 或 <code>application.yml</code> 中覆盖默认配置，也可以使用专门的配置文件（如 <code>logback-spring.xml</code>）进行自定义配置。</p>
+<p><strong>日志级别:</strong> 常见级别有 TRACE、DEBUG、INFO、WARN、ERROR。</p>
+<hr>
+<h2 id="3-Spring-Boot-开发常见应用场景"><a href="#3-Spring-Boot-开发常见应用场景" class="headerlink" title="3. Spring Boot 开发常见应用场景"></a>3. Spring Boot 开发常见应用场景</h2><h3 id="3-1-开发-RESTful-API"><a href="#3-1-开发-RESTful-API" class="headerlink" title="3.1 开发 RESTful API"></a>3.1 开发 RESTful API</h3><p>Spring Boot 主要用于构建 RESTful API，使用 <code>spring-boot-starter-web</code> 快速开发微服务接口使用 <code>@RestController</code>、<code>@RequestMapping</code> 实现接口：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RestController</span></span><br><span class="line"><span class="meta">@RequestMapping(&quot;/api&quot;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">UserController</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@GetMapping(&quot;/user/&#123;id&#125;&quot;)</span></span><br><span class="line">    <span class="keyword">public</span> ResponseEntity&lt;User&gt; <span class="title function_">getUserById</span><span class="params">(<span class="meta">@PathVariable</span> Long id)</span> &#123;</span><br><span class="line">        <span class="type">User</span> <span class="variable">user</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">User</span>(id, <span class="string">&quot;Tom&quot;</span>, <span class="string">&quot;tom@example.com&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span> ResponseEntity.ok(user);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="3-2-Spring-Boot-与数据库交互"><a href="#3-2-Spring-Boot-与数据库交互" class="headerlink" title="3.2 Spring Boot 与数据库交互"></a>3.2 Spring Boot 与数据库交互</h3><p><strong>Spring Data JPA</strong></p>
+<p>Spring Boot 通过 <code>spring-boot-starter-data-jpa</code> 轻松集成<a target="_blank" rel="noopener" href="https://chatgpt.com/c/w">J</a>PA。</p>
+<p><strong>使用 MyBatis</strong></p>
+<p>Spring Boot 也可以使用 MyBatis：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Mapper</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">UserMapper</span> &#123;</span><br><span class="line">    <span class="meta">@Select(&quot;SELECT * FROM users WHERE id = #&#123;id&#125;&quot;)</span></span><br><span class="line">    User <span class="title function_">findById</span><span class="params">(Long id)</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="3-3-事务管理"><a href="#3-3-事务管理" class="headerlink" title="3.3 事务管理"></a>3.3 事务管理</h3><p>Spring Boot 通过 <code>@Transactional</code> 注解实现事务管理：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Service</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">UserService</span> &#123;</span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> UserRepository userRepository;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Transactional</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">createUser</span><span class="params">(User user)</span> &#123;</span><br><span class="line">        userRepository.save(user);</span><br><span class="line">        <span class="comment">// 可能会抛出异常，事务将回滚</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="3-4-Spring-Boot-Security-认证与授权"><a href="#3-4-Spring-Boot-Security-认证与授权" class="headerlink" title="3.4 Spring Boot Security 认证与授权"></a>3.4 Spring Boot Security 认证与授权</h3><ul>
+<li><strong>基于用户名密码的认证</strong>：</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="meta">@EnableWebSecurity</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">SecurityConfig</span> <span class="keyword">extends</span> <span class="title class_">WebSecurityConfigurerAdapter</span> &#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">configure</span><span class="params">(HttpSecurity http)</span> <span class="keyword">throws</span> Exception &#123;</span><br><span class="line">        http.authorizeRequests()</span><br><span class="line">            .antMatchers(<span class="string">&quot;/admin/**&quot;</span>).hasRole(<span class="string">&quot;ADMIN&quot;</span>)</span><br><span class="line">            .anyRequest().authenticated()</span><br><span class="line">            .and()</span><br><span class="line">            .formLogin();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="3-5-Spring-Boot-缓存"><a href="#3-5-Spring-Boot-缓存" class="headerlink" title="3.5 Spring Boot 缓存"></a>3.5 Spring Boot 缓存</h3><p>Spring Boot 通过 <code>@Cacheable</code> 实现缓存：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Service</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">UserService</span> &#123;</span><br><span class="line">    <span class="meta">@Cacheable(&quot;users&quot;)</span></span><br><span class="line">    <span class="keyword">public</span> User <span class="title function_">getUserById</span><span class="params">(Long id)</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> userRepository.findById(id).orElse(<span class="literal">null</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="3-6-Spring-Boot-任务调度"><a href="#3-6-Spring-Boot-任务调度" class="headerlink" title="3.6 Spring Boot 任务调度"></a>3.6 Spring Boot 任务调度</h3><p>使用 <code>@Scheduled</code> 实现定时任务：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Component</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ScheduledTasks</span> &#123;</span><br><span class="line">    <span class="meta">@Scheduled(cron = &quot;0 0/5 * * * ?&quot;)</span> <span class="comment">// 每5分钟执行一次</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">reportCurrentTime</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;Current Time: &quot;</span> + LocalDateTime.now());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="3-7-Spring-Boot-项目整合"><a href="#3-7-Spring-Boot-项目整合" class="headerlink" title="3.7 Spring Boot 项目整合"></a>3.7 Spring Boot 项目整合</h3><ol>
+<li><strong>微服务架构</strong><ul>
+<li>结合 Spring Cloud 实现服务注册（Eureka）、配置中心（Config）、网关（Gateway）。</li>
+</ul>
+</li>
+<li><strong>企业级后台管理系统</strong><ul>
+<li>整合 Spring Security + JWT 实现权限控制，MyBatis&#x2F;Spring Data JPA 处理数据层。</li>
+</ul>
+</li>
+<li><strong>数据批处理</strong><ul>
+<li>使用 Spring Batch 处理大规模数据导入&#x2F;导出。</li>
+</ul>
+</li>
+<li><strong>实时监控与运维</strong><ul>
+<li>通过 Actuator + Prometheus + Grafana 监控应用状态。</li>
+</ul>
+</li>
+<li><strong>消息驱动应用</strong><ul>
+<li>整合 RabbitMQ&#x2F;Kafka 实现异步解耦、流量削峰。</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h1 id="4-常用注解"><a href="#4-常用注解" class="headerlink" title="4.常用注解"></a><strong>4.常用注解</strong></h1><p>在 <strong>Spring Boot</strong> 开发中，<strong>注解</strong> 是非常重要的，它们可以大幅减少 XML 配置，使代码更简洁高效。下面按 <strong>层次</strong> 介绍 Spring Boot 中常见的注解及其使用场景。</p>
+<hr>
+<h3 id="4-1-Spring-Boot-核心注解"><a href="#4-1-Spring-Boot-核心注解" class="headerlink" title="4.1 Spring Boot 核心注解"></a><strong>4.1 Spring Boot 核心注解</strong></h3><table>
+<thead>
+<tr>
+<th>注解</th>
+<th>作用</th>
+<th>使用场景</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>@SpringBootApplication</code></td>
+<td><strong>Spring Boot 入口</strong>，包含 <code>@Configuration</code>、<code>@EnableAutoConfiguration</code> 和 <code>@ComponentScan</code></td>
+<td>标注在 <strong>启动类</strong> 上</td>
+</tr>
+<tr>
+<td><code>@ComponentScan</code></td>
+<td><strong>自动扫描</strong> 组件，如 <code>@Controller</code>、<code>@Service</code>、<code>@Repository</code></td>
+<td>指定扫描的包路径</td>
+</tr>
+<tr>
+<td><code>@EnableAutoConfiguration</code></td>
+<td><strong>自动配置</strong> Spring Boot 组件</td>
+<td>一般不单独使用，包含在 <code>@SpringBootApplication</code> 内</td>
+</tr>
+<tr>
+<td><code>@Configuration</code></td>
+<td><strong>定义 Java 配置类</strong>，可替代 <code>applicationContext.xml</code></td>
+<td>用于创建 <strong>Bean 配置</strong></td>
+</tr>
+<tr>
+<td><code>@Bean</code></td>
+<td><strong>向 Spring 容器注册 Bean</strong></td>
+<td>在 <code>@Configuration</code> 配置类中使用</td>
+</tr>
+</tbody></table>
+<hr>
+<h3 id="4-2-控制层（Controller）相关注解"><a href="#4-2-控制层（Controller）相关注解" class="headerlink" title="4.2 控制层（Controller）相关注解"></a><strong>4.2 控制层（Controller）相关注解</strong></h3><table>
+<thead>
+<tr>
+<th>注解</th>
+<th>作用</th>
+<th>使用场景</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>@RestController</code></td>
+<td>组合了 <code>@Controller</code> 和 <code>@ResponseBody</code>，返回 JSON</td>
+<td><strong>RESTful API</strong> 控制器</td>
+</tr>
+<tr>
+<td><code>@Controller</code></td>
+<td>标注控制器，返回 <strong>页面</strong></td>
+<td>MVC 传统开发（<strong>搭配 Thymeleaf</strong>）</td>
+</tr>
+<tr>
+<td><code>@RequestMapping</code></td>
+<td><strong>指定请求路径</strong>（可用于类&#x2F;方法）</td>
+<td>映射 HTTP 请求</td>
+</tr>
+<tr>
+<td><code>@GetMapping</code></td>
+<td>处理 <code>GET</code> 请求</td>
+<td>读取数据</td>
+</tr>
+<tr>
+<td><code>@PostMapping</code></td>
+<td>处理 <code>POST</code> 请求</td>
+<td>新增数据</td>
+</tr>
+<tr>
+<td><code>@PutMapping</code></td>
+<td>处理 <code>PUT</code> 请求</td>
+<td>更新数据</td>
+</tr>
+<tr>
+<td><code>@DeleteMapping</code></td>
+<td>处理 <code>DELETE</code> 请求</td>
+<td>删除数据</td>
+</tr>
+<tr>
+<td><code>@RequestParam</code></td>
+<td><strong>获取 URL 请求参数</strong></td>
+<td><code>@RequestParam(&quot;id&quot;) Long id</code></td>
+</tr>
+<tr>
+<td><code>@PathVariable</code></td>
+<td><strong>获取 URL 路径变量</strong></td>
+<td><code>@PathVariable(&quot;id&quot;) Long id</code></td>
+</tr>
+<tr>
+<td><code>@RequestBody</code></td>
+<td><strong>接收 JSON 请求体</strong></td>
+<td><code>@RequestBody User user</code></td>
+</tr>
+<tr>
+<td><code>@ResponseBody</code></td>
+<td><strong>返回 JSON 数据</strong></td>
+<td>搭配 <code>@Controller</code> 使用</td>
+</tr>
+</tbody></table>
+<p><strong>示例</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RestController</span></span><br><span class="line"><span class="meta">@RequestMapping(&quot;/users&quot;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">UserController</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@GetMapping(&quot;/&#123;id&#125;&quot;)</span></span><br><span class="line">    <span class="keyword">public</span> User <span class="title function_">getUser</span><span class="params">(<span class="meta">@PathVariable</span> Long id)</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">User</span>(id, <span class="string">&quot;Tom&quot;</span>, <span class="string">&quot;tom@example.com&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@PostMapping</span></span><br><span class="line">    <span class="keyword">public</span> User <span class="title function_">createUser</span><span class="params">(<span class="meta">@RequestBody</span> User user)</span> &#123;</span><br><span class="line">        user.setId(<span class="number">100L</span>);</span><br><span class="line">        <span class="keyword">return</span> user;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="4-3-业务层（Service）相关注解"><a href="#4-3-业务层（Service）相关注解" class="headerlink" title="4.3 业务层（Service）相关注解"></a><strong>4.3 业务层（Service）相关注解</strong></h3><table>
+<thead>
+<tr>
+<th>注解</th>
+<th>作用</th>
+<th>使用场景</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>@Service</code></td>
+<td><strong>标注业务层 Bean</strong>，供 <code>Controller</code> 调用</td>
+<td>标注 <strong>业务逻辑</strong> 组件</td>
+</tr>
+<tr>
+<td><code>@Transactional</code></td>
+<td><strong>事务管理</strong>，确保操作要么全部成功，要么全部回滚</td>
+<td>处理数据库事务</td>
+</tr>
+</tbody></table>
+<p><strong>示例</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Service</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">UserService</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Transactional</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">updateUser</span><span class="params">(User user)</span> &#123;</span><br><span class="line">        <span class="comment">// 先更新数据库</span></span><br><span class="line">        userRepository.save(user);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 模拟异常，事务回滚</span></span><br><span class="line">        <span class="type">int</span> <span class="variable">error</span> <span class="operator">=</span> <span class="number">1</span> / <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="4-4-数据访问层（Repository）相关注解"><a href="#4-4-数据访问层（Repository）相关注解" class="headerlink" title="4.4 数据访问层（Repository）相关注解"></a><strong>4.4 数据访问层（Repository）相关注解</strong></h3><table>
+<thead>
+<tr>
+<th>注解</th>
+<th>作用</th>
+<th>使用场景</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>@Repository</code></td>
+<td><strong>标注 DAO 层</strong>，并支持数据库异常转换</td>
+<td>访问数据库（JPA、MyBatis）</td>
+</tr>
+<tr>
+<td><code>@Mapper</code></td>
+<td><strong>标注 MyBatis 的 Mapper</strong></td>
+<td><strong>MyBatis</strong> 持久层</td>
+</tr>
+<tr>
+<td><code>@Modifying</code></td>
+<td><strong>用于更新、删除等 SQL 语句</strong></td>
+<td><strong>Spring Data JPA</strong></td>
+</tr>
+<tr>
+<td><code>@Query</code></td>
+<td><strong>自定义 SQL 语句</strong></td>
+<td><strong>Spring Data JPA</strong></td>
+</tr>
+</tbody></table>
+<p><strong>示例（Spring Data JPA）</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Repository</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">UserRepository</span> <span class="keyword">extends</span> <span class="title class_">JpaRepository</span>&lt;User, Long&gt; &#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Query(&quot;SELECT u FROM User u WHERE u.name = ?1&quot;)</span></span><br><span class="line">    User <span class="title function_">findByName</span><span class="params">(String name)</span>;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Modifying</span></span><br><span class="line">    <span class="meta">@Transactional</span></span><br><span class="line">    <span class="meta">@Query(&quot;UPDATE User u SET u.email = ?2 WHERE u.id = ?1&quot;)</span></span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">updateEmail</span><span class="params">(Long id, String email)</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="4-5-依赖注入相关注解"><a href="#4-5-依赖注入相关注解" class="headerlink" title="4.5 依赖注入相关注解"></a><strong>4.5 依赖注入相关注解</strong></h3><table>
+<thead>
+<tr>
+<th>注解</th>
+<th>作用</th>
+<th>使用场景</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>@Autowired</code></td>
+<td><strong>自动注入</strong> Bean</td>
+<td><strong>默认按类型</strong> 注入</td>
+</tr>
+<tr>
+<td><code>@Qualifier</code></td>
+<td><strong>指定 Bean 名称注入</strong></td>
+<td>解决多个 Bean 冲突</td>
+</tr>
+<tr>
+<td><code>@Resource</code></td>
+<td><strong>按名称注入</strong>（JDK 提供）</td>
+<td>作用类似 <code>@Autowired</code></td>
+</tr>
+<tr>
+<td><code>@Value</code></td>
+<td><strong>读取配置文件值</strong></td>
+<td><code>@Value(&quot;$&#123;server.port&#125;&quot;)</code></td>
+</tr>
+</tbody></table>
+<p><strong>示例</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Service</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">UserService</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> UserRepository userRepository;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Value(&quot;$&#123;app.name&#125;&quot;)</span></span><br><span class="line">    <span class="keyword">private</span> String appName;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="4-6-配置文件相关注解"><a href="#4-6-配置文件相关注解" class="headerlink" title="4.6 配置文件相关注解"></a><strong>4.6 配置文件相关注解</strong></h3><table>
+<thead>
+<tr>
+<th>注解</th>
+<th>作用</th>
+<th>使用场景</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>@ConfigurationProperties</code></td>
+<td><strong>绑定 application.yml 的配置项</strong></td>
+<td>绑定配置文件到对象</td>
+</tr>
+<tr>
+<td><code>@PropertySource</code></td>
+<td><strong>加载额外的配置文件</strong></td>
+<td>读取 <code>config.properties</code></td>
+</tr>
+</tbody></table>
+<p><strong>示例</strong></p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">app:</span></span><br><span class="line">  <span class="attr">name:</span> <span class="string">&quot;MyApp&quot;</span></span><br><span class="line">  <span class="attr">version:</span> <span class="string">&quot;1.0.0&quot;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Component</span></span><br><span class="line"><span class="meta">@ConfigurationProperties(prefix = &quot;app&quot;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">AppConfig</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="keyword">private</span> String version;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="4-7-其他常用注解"><a href="#4-7-其他常用注解" class="headerlink" title="4.7 其他常用注解"></a><strong>4.7 其他常用注解</strong></h2><table>
+<thead>
+<tr>
+<th>注解</th>
+<th>作用</th>
+<th>使用场景</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>@Scheduled</code></td>
+<td><strong>定时任务</strong></td>
+<td>执行定时任务</td>
+</tr>
+<tr>
+<td><code>@Async</code></td>
+<td><strong>异步任务</strong></td>
+<td>开启异步线程</td>
+</tr>
+</tbody></table>
+<p><strong>示例</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Service</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">TaskService</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Scheduled(cron = &quot;0 0 12 * * ?&quot;)</span> <span class="comment">// 每天中午12点执行</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">scheduledTask</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;执行定时任务...&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Async</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">asyncTask</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;执行异步任务...&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a><strong>总结</strong></h3><table>
+<thead>
+<tr>
+<th>作用</th>
+<th>关键注解</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Spring Boot 核心</strong></td>
+<td><code>@SpringBootApplication</code>、<code>@ComponentScan</code></td>
+</tr>
+<tr>
+<td><strong>控制层</strong></td>
+<td><code>@RestController</code>、<code>@GetMapping</code>、<code>@PostMapping</code></td>
+</tr>
+<tr>
+<td><strong>业务层</strong></td>
+<td><code>@Service</code>、<code>@Transactional</code></td>
+</tr>
+<tr>
+<td><strong>数据层</strong></td>
+<td><code>@Repository</code>、<code>@Query</code></td>
+</tr>
+<tr>
+<td><strong>依赖注入</strong></td>
+<td><code>@Autowired</code>、<code>@Value</code></td>
+</tr>
+<tr>
+<td><strong>配置文件</strong></td>
+<td><code>@ConfigurationProperties</code></td>
+</tr>
+<tr>
+<td><strong>定时任务</strong></td>
+<td><code>@Scheduled</code></td>
+</tr>
+<tr>
+<td><strong>异步任务</strong></td>
+<td><code>@Async</code></td>
+</tr>
+</tbody></table>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2025/03/02/spring%E6%A1%86%E6%9E%B6/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Merak Chan">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Merak Chan的技术博客">
+      <meta itemprop="description" content="Stay Gold, Pony Boy!!!">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Merak Chan的技术博客">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2025/03/02/spring%E6%A1%86%E6%9E%B6/" class="post-title-link" itemprop="url">spring框架</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2025-03-02 14:24:32 / 修改时间：14:40:37" itemprop="dateCreated datePublished" datetime="2025-03-02T14:24:32+08:00">2025-03-02</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Java%E6%A0%B8%E5%BF%83%E5%BC%80%E5%8F%91/" itemprop="url" rel="index"><span itemprop="name">Java核心开发</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="Spring-Framework"><a href="#Spring-Framework" class="headerlink" title="Spring Framework"></a>Spring Framework</h1><h1 id="一、基本介绍"><a href="#一、基本介绍" class="headerlink" title="一、基本介绍"></a>一、基本介绍</h1><p>模块如下：<br><img src="/./spring%E6%A1%86%E6%9E%B6/SpringFramework.png"></p>
+<p>Spring 主要通过 <strong>IoC（控制反转）</strong> 和 <strong>AOP（面向切面编程）</strong> 解决了企业级开发中的复杂性，提高了开发效率。</p>
+<hr>
+<h1 id="二、Spring-IoC"><a href="#二、Spring-IoC" class="headerlink" title="二、Spring IoC"></a>二、Spring IoC</h1><h2 id="什么是-IOC？"><a href="#什么是-IOC？" class="headerlink" title="什么是 IOC？"></a><strong>什么是 IOC？</strong></h2><p><strong>IOC（Inversion of Control，控制反转）设计思想或模式</strong> 是 Spring 的核心概念，指 <strong>对象的创建和依赖管理交给 Spring 容器，而不是由程序手动管理</strong>。</p>
+<h2 id="IOC-的核心机制"><a href="#IOC-的核心机制" class="headerlink" title="IOC 的核心机制"></a><strong>IOC 的核心机制</strong></h2><ul>
+<li><strong>依赖注入（DI, Dependency Injection）</strong>：通过 <strong>构造方法、Setter 方法、注解</strong> 自动注入依赖对象。</li>
+<li><strong>Bean 管理</strong>：Spring 容器通过 <code>ApplicationContext</code> 统一管理 Bean 的创建、初始化、销毁。</li>
+</ul>
+<hr>
+<h2 id="IOC-容器"><a href="#IOC-容器" class="headerlink" title="IOC 容器"></a><strong>IOC 容器</strong></h2><p>Spring 主要提供两种 IOC 容器：</p>
+<ol>
+<li><strong>BeanFactory</strong>（底层容器，懒加载，轻量级）：<ul>
+<li>适用于资源有限的环境，例如 IoT 设备。</li>
+<li>使用 <code>ClassPathXmlApplicationContext</code> 或 <code>FileSystemXmlApplicationContext</code> 进行 XML 配置。</li>
+</ul>
+</li>
+<li><strong>ApplicationContext</strong>（高级容器，默认预加载 Bean）：<ul>
+<li><code>AnnotationConfigApplicationContext</code>（基于 Java 配置）</li>
+<li><code>ClassPathXmlApplicationContext</code>（基于 XML）</li>
+<li><code>WebApplicationContext</code>（适用于 Web 环境）</li>
+</ul>
+</li>
+</ol>
+<p><strong>示例：基于 Java 配置的 IOC</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">AppConfig</span> &#123;</span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="keyword">public</span> UserService <span class="title function_">userService</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">UserService</span>();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Main</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">ApplicationContext</span> <span class="variable">context</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">AnnotationConfigApplicationContext</span>(AppConfig.class);</span><br><span class="line">        <span class="type">UserService</span> <span class="variable">userService</span> <span class="operator">=</span> context.getBean(UserService.class);</span><br><span class="line">        userService.sayHello();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="依赖注入（DI）"><a href="#依赖注入（DI）" class="headerlink" title="依赖注入（DI）"></a><strong>依赖注入（DI）</strong></h2><p>Spring 提供了三种依赖注入方式：</p>
+<h3 id="（1）构造方法注入"><a href="#（1）构造方法注入" class="headerlink" title="（1）构造方法注入"></a><strong>（1）构造方法注入</strong></h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Component</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">UserService</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> UserRepository userRepository;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">UserService</span><span class="params">(UserRepository userRepository)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.userRepository = userRepository;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="（2）Setter-方法注入"><a href="#（2）Setter-方法注入" class="headerlink" title="（2）Setter 方法注入"></a><strong>（2）Setter 方法注入</strong></h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Component</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">UserService</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> UserRepository userRepository;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setUserRepository</span><span class="params">(UserRepository userRepository)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.userRepository = userRepository;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="（3）字段注入"><a href="#（3）字段注入" class="headerlink" title="（3）字段注入"></a><strong>（3）字段注入</strong></h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Component</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">UserService</span> &#123;</span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> UserRepository userRepository;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>推荐使用构造方法注入，避免循环依赖问题。</p>
+</blockquote>
+<h2 id="IoC常见问题"><a href="#IoC常见问题" class="headerlink" title="IoC常见问题"></a>IoC常见问题</h2><h3 id="Component和-Bean的区别是什么？"><a href="#Component和-Bean的区别是什么？" class="headerlink" title="@Component和@Bean的区别是什么？"></a>@Component和@Bean的区别是什么？</h3><ul>
+<li><code>@Component</code> 注解作用于类，而<code>@Bean</code>注解作用于方法。</li>
+<li><code>@Component</code>通常是通过类路径扫描来自动侦测以及自动装配到 Spring 容器中（我们可以使用 <code>@ComponentScan</code> 注解定义要扫描的路径从中找出标识了需要装配的类自动装配到 Spring 的 bean 容器中）。<code>@Bean</code> 注解通常是我们在标有该注解的方法中定义产生这个 bean,<code>@Bean</code>告诉了 Spring 这是某个类的实例，当我需要用它的时候还给我。</li>
+<li><code>@Bean</code> 注解比 <code>@Component</code> 注解的自定义性更强，而且很多地方我们只能通过 <code>@Bean</code> 注解来注册 bean。比如当我们引用第三方库中的类需要装配到 <code>Spring</code>容器时，则只能通过 <code>@Bean</code>来实现。</li>
+</ul>
+<hr>
+<h3 id="Autowired和-Resource区别？"><a href="#Autowired和-Resource区别？" class="headerlink" title="@Autowired和@Resource区别？"></a><strong>@Autowired和@Resource区别？</strong></h3><ul>
+<li><code>@Autowired</code> 是 Spring 提供的注解，<code>@Resource</code> 是 JDK 提供的注解。</li>
+<li><code>Autowired</code> 默认的注入方式为<code>byType</code>（根据类型进行匹配），<code>@Resource</code>默认注入方式为 <code>byName</code>（根据名称进行匹配）。</li>
+<li>当一个接口存在多个实现类的情况下，<code>@Autowired</code> 和<code>@Resource</code>都需要通过名称才能正确匹配到对应的 Bean。<code>Autowired</code> 可以通过 <code>@Qualifier</code> 注解来显式指定名称，<code>@Resource</code>可以通过 <code>name</code> 属性来显式指定名称。</li>
+<li><code>@Autowired</code> 支持在构造函数、方法、字段和参数上使用。<code>@Resource</code> 主要用于字段和方法上的注入，不支持在构造函数或参数上使用。</li>
+</ul>
+<hr>
+<h3 id="注入Bean的方式"><a href="#注入Bean的方式" class="headerlink" title="@注入Bean的方式"></a><strong>@注入Bean的方式</strong></h3><p>依赖注入 (Dependency Injection, DI) 的常见方式：</p>
+<ol>
+<li>构造函数注入：通过类的构造函数来注入依赖项。</li>
+<li>Setter 注入：通过类的 Setter 方法来注入依赖项。</li>
+<li>Field（字段） 注入：直接在类的字段上使用注解（如 <code>@Autowired</code> 或 <code>@Resource</code>）来注入依赖项。</li>
+</ol>
+<p><strong>Spring 官方推荐构造函数注入</strong>，这种注入方式的优势如下：</p>
+<ol>
+<li>依赖完整性：确保所有必需依赖在对象创建时就被注入，避免了空指针异常的风险。</li>
+<li>不可变性：有助于创建不可变对象，提高了线程安全性。</li>
+<li>初始化保证：组件在使用前已完全初始化，减少了潜在的错误。</li>
+<li>测试便利性：在单元测试中，可以直接通过构造函数传入模拟的依赖项，而不必依赖 Spring 容器进行注入。</li>
+</ol>
+<p>构造函数注入适合处理<strong>必需的依赖项</strong>，而 <strong>Setter 注入</strong> 则更适合<strong>可选的依赖项</strong>，这些依赖项可以有默认值或在对象生命周期中动态设置。虽然 <code>@Autowired</code> 可以用于 Setter 方法来处理必需的依赖项，但构造函数注入仍然是更好的选择。</p>
+<p>在某些情况下（例如第三方类不提供 Setter 方法），构造函数注入可能是<strong>唯一的选择</strong>。</p>
+<hr>
+<h3 id="Bean的作用域有哪些？"><a href="#Bean的作用域有哪些？" class="headerlink" title="@Bean的作用域有哪些？"></a>@Bean的作用域有哪些？</h3><p>Spring 中 Bean 的作用域通常有下面几种：</p>
+<ul>
+<li><strong>singleton</strong> : IoC 容器中只有唯一的 bean 实例。Spring 中的 bean 默认都是单例的，是对单例设计模式的应用。</li>
+<li><strong>prototype</strong> : 每次获取都会创建一个新的 bean 实例。也就是说，连续 <code>getBean()</code> 两次，得到的是不同的 Bean 实例。</li>
+<li><strong>request</strong> （仅 Web 应用可用）: 每一次 HTTP 请求都会产生一个新的 bean（请求 bean），该 bean 仅在当前 HTTP request 内有效。</li>
+<li><strong>session</strong> （仅 Web 应用可用） : 每一次来自新 session 的 HTTP 请求都会产生一个新的 bean（会话 bean），该 bean 仅在当前 HTTP session 内有效。</li>
+<li><strong>application&#x2F;global-session</strong> （仅 Web 应用可用）：每个 Web 应用在启动时创建一个 Bean（应用 Bean），该 bean 仅在当前应用启动时间内有效。</li>
+<li><strong>websocket</strong> （仅 Web 应用可用）：每一次 WebSocket 会话产生一个新的 bean。</li>
+</ul>
+<hr>
+<h3 id="Bean的生命周期"><a href="#Bean的生命周期" class="headerlink" title="@Bean的生命周期"></a>@Bean的生命周期</h3><p>Spring 中 Bean 的作用域通常有下面几种：</p>
+<ul>
+<li><strong>singleton</strong> : IoC 容器中只有唯一的 bean 实例。Spring 中的 bean 默认都是单例的，是对单例设计模式的应用。</li>
+<li><strong>prototype</strong> : 每次获取都会创建一个新的 bean 实例。也就是说，连续 <code>getBean()</code> 两次，得到的是不同的 Bean 实例。</li>
+<li><strong>request</strong> （仅 Web 应用可用）: 每一次 HTTP 请求都会产生一个新的 bean（请求 bean），该 bean 仅在当前 HTTP request 内有效。</li>
+<li><strong>session</strong> （仅 Web 应用可用） : 每一次来自新 session 的 HTTP 请求都会产生一个新的 bean（会话 bean），该 bean 仅在当前 HTTP session 内有效。</li>
+<li><strong>application&#x2F;global-session</strong> （仅 Web 应用可用）：每个 Web 应用在启动时创建一个 Bean（应用 Bean），该 bean 仅在当前应用启动时间内有效。</li>
+<li><strong>websocket</strong> （仅 Web 应用可用）：每一次 WebSocket 会话产生一个新的 bean。</li>
+</ul>
+<hr>
+<h1 id="三、Spring-AOP"><a href="#三、Spring-AOP" class="headerlink" title="三、Spring AOP"></a>三、Spring AOP</h1><h2 id="什么是-AOP？"><a href="#什么是-AOP？" class="headerlink" title="什么是 AOP？"></a><strong>什么是 AOP？</strong></h2><p><strong>AOP（Aspect-Oriented Programming）</strong> 是面向切面编程的一种思想，用于 <strong>在不修改原代码的情况下增加额外功能</strong>，例如 <strong>日志记录、事务管理、权限控制</strong> 等。</p>
+<p><strong>Spring AOP 主要使用代理模式实现</strong>：</p>
+<ul>
+<li><strong>JDK 动态代理（基于接口）</strong></li>
+<li><strong>CGLIB 动态代理（基于子类继承）</strong></li>
+</ul>
+<hr>
+<h2 id="AOP-相关术语？"><a href="#AOP-相关术语？" class="headerlink" title="AOP 相关术语？"></a><strong>AOP 相关术语？</strong></h2><ul>
+<li><strong>切面（Aspect）</strong>：封装多个通知的逻辑模块，如日志、事务。</li>
+<li><strong>通知（Advice）</strong>：额外逻辑，如 <code>@Before</code>、<code>@After</code>。</li>
+<li><strong>切点（Pointcut）</strong>：定义在哪些方法上应用 AOP。</li>
+<li><strong>连接点（JoinPoint）</strong>：具体执行的方法。</li>
+<li><strong>目标对象（Target）</strong>：被代理的对象。</li>
+<li><strong>代理（Proxy）</strong>：AOP 生成的代理对象。</li>
+</ul>
+<hr>
+<h2 id="AOP-使用示例"><a href="#AOP-使用示例" class="headerlink" title="AOP 使用示例"></a><strong>AOP 使用示例</strong></h2><h3 id="（1）定义切面"><a href="#（1）定义切面" class="headerlink" title="（1）定义切面"></a><strong>（1）定义切面</strong></h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Aspect</span></span><br><span class="line"><span class="meta">@Component</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">LoggingAspect</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Before(&quot;execution(* com.example.service.*.*(..))&quot;)</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">logBefore</span><span class="params">(JoinPoint joinPoint)</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;执行方法: &quot;</span> + joinPoint.getSignature().getName());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="（2）切点表达式"><a href="#（2）切点表达式" class="headerlink" title="（2）切点表达式"></a><strong>（2）切点表达式</strong></h3><p>常见的切点表达式：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 匹配所有 service 包下的类的所有方法</span></span><br><span class="line"><span class="meta">@Pointcut(&quot;execution(* com.example.service.*.*(..))&quot;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">serviceMethods</span><span class="params">()</span> &#123;&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="（3）通知类型"><a href="#（3）通知类型" class="headerlink" title="（3）通知类型"></a><strong>（3）通知类型</strong></h3><p>Spring 提供多种 AOP 通知类型：</p>
+<ul>
+<li>**<code>@Before</code>**（方法执行前）</li>
+<li>**<code>@After</code>**（方法执行后）</li>
+<li>**<code>@Around</code>**（环绕增强）</li>
+<li>**<code>@AfterReturning</code>**（方法正常返回）</li>
+<li>**<code>@AfterThrowing</code>**（方法抛出异常）</li>
+</ul>
+<p><strong>使用 <code>@Around</code> 计算方法执行时间</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Aspect</span></span><br><span class="line"><span class="meta">@Component</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">PerformanceAspect</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Around(&quot;execution(* com.example.service.*.*(..))&quot;)</span></span><br><span class="line">    <span class="keyword">public</span> Object <span class="title function_">measureExecutionTime</span><span class="params">(ProceedingJoinPoint joinPoint)</span> <span class="keyword">throws</span> Throwable &#123;</span><br><span class="line">        <span class="type">long</span> <span class="variable">start</span> <span class="operator">=</span> System.currentTimeMillis();</span><br><span class="line">        <span class="type">Object</span> <span class="variable">result</span> <span class="operator">=</span> joinPoint.proceed();</span><br><span class="line">        <span class="type">long</span> <span class="variable">end</span> <span class="operator">=</span> System.currentTimeMillis();</span><br><span class="line">        System.out.println(joinPoint.getSignature().getName() + <span class="string">&quot; 方法执行时间: &quot;</span> + (end - start) + <span class="string">&quot;ms&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="AOP常见问题"><a href="#AOP常见问题" class="headerlink" title="AOP常见问题"></a>AOP常见问题</h2><h3 id="Spring-AOP-和-AspectJ-AOP的区别？"><a href="#Spring-AOP-和-AspectJ-AOP的区别？" class="headerlink" title="Spring AOP 和 AspectJ AOP的区别？"></a><strong>Spring AOP 和 AspectJ AOP的区别？</strong></h3><p><strong>Spring AOP 属于运行时增强，而 AspectJ 是编译时增强。</strong> Spring AOP 基于代理(Proxying)，而 AspectJ 基于字节码操作(Bytecode Manipulation)。</p>
+<p>Spring AOP 已经集成了 AspectJ ，AspectJ 应该算的上是 Java 生态系统中最完整的 AOP 框架了。AspectJ 相比于 Spring AOP 功能更加强大，但是 Spring AOP 相对来说更简单，</p>
+<p>如果我们的切面比较少，那么两者性能差异不大。但是，当切面太多的话，最好选择 AspectJ ，它比 Spring AOP 快很多</p>
+<h3 id="AOP常见通知类："><a href="#AOP常见通知类：" class="headerlink" title="AOP常见通知类："></a>AOP常见通知类：</h3><ul>
+<li><strong>Before</strong>（前置通知）：目标对象的方法调用之前触发</li>
+<li><strong>After</strong> （后置通知）：目标对象的方法调用之后触发</li>
+<li><strong>AfterReturning</strong>（返回通知）：目标对象的方法调用完成，在返回结果值之后触发</li>
+<li><strong>AfterThrowing</strong>（异常通知）：目标对象的方法运行中抛出 &#x2F; 触发异常后触发。AfterReturning 和 AfterThrowing 两者互斥。如果方法调用成功无异常，则会有返回值；如果方法抛出了异常，则不会有返回值。</li>
+<li><strong>Around</strong> （环绕通知）：编程式控制目标对象的方法调用。环绕通知是所有通知类型中可操作范围最大的一种，因为它可以直接拿到目标对象，以及要执行的方法，所以环绕通知可以任意的在目标对象的方法调用前后搞事，甚至不调用目标对象的方法</li>
+</ul>
+<h1 id="四、Spring-事务管理"><a href="#四、Spring-事务管理" class="headerlink" title="四、Spring 事务管理"></a><strong>四、Spring 事务管理</strong></h1><h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a><strong>简介</strong></h3><p>Spring 事务管理提供了一种 <strong>声明式（Declarative）</strong> 和 <strong>编程式（Programmatic）</strong> 方式来管理数据库事务，确保数据一致性，防止 <strong>脏读、不可重复读、幻读</strong> 等问题。</p>
+<hr>
+<h2 id="事务的核心概念"><a href="#事务的核心概念" class="headerlink" title="事务的核心概念"></a><strong>事务的核心概念</strong></h2><p>Spring 的事务管理基于 <strong>数据库事务 ACID（原子性、一致性、隔离性、持久性）</strong> 特性，核心概念如下：</p>
+<ol>
+<li><p><strong>事务传播（Propagation）</strong></p>
+<p> Spring 定义了 7 种事务传播机制，控制方法在事务中的行为，例如：</p>
+<ul>
+<li><code>REQUIRED</code>（默认）：如果当前存在事务，使用当前事务；否则新建事务。</li>
+<li><code>REQUIRES_NEW</code>：总是新建事务，暂停当前事务（如果存在）。</li>
+<li><code>SUPPORTS</code>：如果有事务就加入，没有事务就以非事务方式执行。</li>
+</ul>
+</li>
+<li><p><strong>事务隔离级别（Isolation Level）</strong></p>
+<p> 影响多个事务并发访问时的数据可见性，常见隔离级别：</p>
+<ul>
+<li><code>READ_UNCOMMITTED</code>（读取未提交数据，可能导致脏读）</li>
+<li><code>READ_COMMITTED</code>（读取已提交数据，防止脏读，但可能有不可重复读）</li>
+<li><code>REPEATABLE_READ</code>（防止不可重复读，但可能有幻读）</li>
+<li><code>SERIALIZABLE</code>（最高隔离级别，避免所有问题，但性能最低）</li>
+</ul>
+</li>
+<li><p><strong>事务回滚机制（Rollback Rules）</strong></p>
+<ul>
+<li><strong>默认情况</strong>：Spring 事务只会在 <strong>运行时异常（<code>RuntimeException</code>）</strong> 或 <strong><code>Error</code></strong> 发生时回滚，<strong>受检异常（<code>CheckedException</code>）不会触发回滚</strong>。</li>
+<li><strong>自定义回滚</strong>：可以通过 <code>@Transactional(rollbackFor = Exception.class)</code> 指定回滚的异常类型。</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="Spring-事务的实现方式"><a href="#Spring-事务的实现方式" class="headerlink" title="Spring 事务的实现方式"></a><strong>Spring 事务的实现方式</strong></h2><h3 id="（1）声明式事务管理（推荐）"><a href="#（1）声明式事务管理（推荐）" class="headerlink" title="（1）声明式事务管理（推荐）"></a><strong>（1）声明式事务管理（推荐）</strong></h3><p>基于 <code>@Transactional</code> 注解，最常见的事务管理方式：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Service</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">OrderService</span> &#123;</span><br><span class="line">    <span class="meta">@Transactional(rollbackFor = Exception.class)</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">createOrder</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="comment">// 数据库操作，自动管理事务</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>优点：</p>
+<ul>
+<li>代码清晰，解耦业务逻辑和事务管理。</li>
+<li>由 <strong>AOP 代理</strong> 负责事务控制。</li>
+</ul>
+<h3 id="（2）编程式事务管理（灵活但不推荐）"><a href="#（2）编程式事务管理（灵活但不推荐）" class="headerlink" title="（2）编程式事务管理（灵活但不推荐）"></a><strong>（2）编程式事务管理（灵活但不推荐）</strong></h3><p>使用 <code>TransactionTemplate</code> 或 <code>PlatformTransactionManager</code> 手动控制事务：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Autowired</span></span><br><span class="line"><span class="keyword">private</span> TransactionTemplate transactionTemplate;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">createOrder</span><span class="params">()</span> &#123;</span><br><span class="line">    transactionTemplate.execute(status -&gt; &#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="comment">// 业务逻辑</span></span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">            status.setRollbackOnly();</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>优点：</p>
+<ul>
+<li>适用于复杂事务控制，如 <strong>多个数据源事务管理</strong>。</li>
+<li>灵活，可以手动回滚事务。</li>
+</ul>
+<p>缺点：</p>
+<ul>
+<li>代码冗余，侵入业务逻辑，不符合 <strong>Spring AOP</strong> 设计原则。</li>
+</ul>
+<hr>
+<h2 id="Spring-事务常见问题及解决方案"><a href="#Spring-事务常见问题及解决方案" class="headerlink" title="Spring 事务常见问题及解决方案"></a><strong>Spring 事务常见问题及解决方案</strong></h2><h3 id="（1）事务失效问题"><a href="#（1）事务失效问题" class="headerlink" title="（1）事务失效问题"></a><strong>（1）事务失效问题</strong></h3><p><strong>问题</strong>：</p>
+<p><code>@Transactional</code> 失效的常见原因：</p>
+<ol>
+<li><strong>方法内部调用</strong>（<code>this.xxx()</code> 调用不会触发事务代理）</li>
+<li><strong>非公共方法（<code>private</code>、<code>protected</code>）</strong> 不能被 Spring 代理拦截</li>
+<li><strong>事务传播机制影响</strong>（如 <code>REQUIRES_NEW</code> 影响子事务）</li>
+<li><strong>AOP 代理失效</strong>（未使用 <strong>Spring 容器管理的 Bean</strong>）</li>
+</ol>
+<p><strong>解决方案</strong>：</p>
+<ul>
+<li><strong>确保 <code>@Transactional</code> 标注的方法是 <code>public</code></strong></li>
+<li><strong>使用 <code>self</code> 调用</strong>（获取 <code>this</code> 的 Spring 代理对象）</li>
+<li><strong>正确设置 <code>Propagation</code> 传播机制</strong></li>
+</ul>
+<hr>
+<h3 id="（2）事务回滚问题"><a href="#（2）事务回滚问题" class="headerlink" title="（2）事务回滚问题"></a><strong>（2）事务回滚问题</strong></h3><p><strong>问题</strong>：</p>
+<ul>
+<li>Spring 只对 <strong><code>RuntimeException</code>（运行时异常）</strong> 回滚，而 <code>CheckedException</code>（受检异常）不会触发回滚。</li>
+</ul>
+<p><strong>解决方案</strong>：</p>
+<ul>
+<li>显式指定 <code>rollbackFor</code>：</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Transactional(rollbackFor = Exception.class)</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="（3）多数据源事务问题"><a href="#（3）多数据源事务问题" class="headerlink" title="（3）多数据源事务问题"></a><strong>（3）多数据源事务问题</strong></h3><p><strong>问题</strong>：</p>
+<ul>
+<li>Spring 事务默认只能管理 <strong>单一数据源</strong>，如果涉及多个数据源，则事务无法正常回滚。</li>
+</ul>
+<p><strong>解决方案</strong>：</p>
+<ul>
+<li>使用 <strong>分布式事务管理框架</strong>（如 Seata、Atomikos）</li>
+<li>Spring Boot 2.0+ 版本可使用 <code>@Transactional</code> + <code>@EnableTransactionManagement</code> 配合 <strong>JTA（Java Transaction API）</strong> 进行多数据源事务管理。</li>
+</ul>
+<hr>
+<h3 id="（4）事务超时问题"><a href="#（4）事务超时问题" class="headerlink" title="（4）事务超时问题"></a><strong>（4）事务超时问题</strong></h3><p><strong>问题</strong>：</p>
+<ul>
+<li>事务长时间未提交，导致数据库锁等待，影响性能。</li>
+</ul>
+<p><strong>解决方案</strong>：</p>
+<ul>
+<li>设置 <strong>事务超时时间</strong>，避免长事务：</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Transactional(timeout = 5)</span> <span class="comment">// 超时 5 秒</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h1 id="五、Spring-MVC"><a href="#五、Spring-MVC" class="headerlink" title="五、Spring MVC"></a><strong>五、Spring MVC</strong></h1><h2 id="MVC开发"><a href="#MVC开发" class="headerlink" title="MVC开发"></a>MVC开发</h2><p>MVC 是模型(Model)、视图(View)、控制器(Controller)的简写，其核心思想是通过将业务逻辑、数据、显示分离来组织代码。—-设计模式？or 软件设计规范？</p>
+<h3 id="Model-1-时代"><a href="#Model-1-时代" class="headerlink" title="Model 1 时代"></a><strong>Model 1 时代</strong></h3><p>在 Model1 模式下，整个 Web 应用几乎全部用 JSP 页面组成，只用少量的 JavaBean 来处理数据库连接、访问等操作。这个模式下 JSP 即是控制层（Controller）又是表现层（View）。</p>
+<h3 id="Model-2-时代"><a href="#Model-2-时代" class="headerlink" title="Model 2 时代"></a><strong>Model 2 时代</strong></h3><p>Java Bean(Model)+ JSP（View）+Servlet（Controller）早期的 JavaWeb MVC 开发模式。—Struts2框架</p>
+<ul>
+<li>Model:系统涉及的数据，也就是 dao 和 bean。</li>
+<li>View：展示模型中的数据，只是用来展示。</li>
+<li>Controller：接受用户请求，并将请求发送至 Model，最后返回数据给 JSP 并展示给用户</li>
+</ul>
+<h3 id="Spring-MVC-时代"><a href="#Spring-MVC-时代" class="headerlink" title="Spring MVC 时代"></a><strong>Spring MVC 时代</strong></h3><p>随着 Spring 轻量级开发框架的流行，Spring 生态圈出现了 Spring MVC 框架， Spring MVC 是当前最优秀的 MVC 框架。相比于 Struts2 ， Spring MVC 使用更加简单和方便，开发效率更高，并且 Spring MVC 运行速度更快。</p>
+<p>MVC 是一种设计模式，Spring MVC 是一款很优秀的 MVC 框架。Spring MVC 可以帮助我们进行更简洁的 Web 层的开发，并且它天生与 Spring 框架集成。Spring MVC 下我们一般把后端项目分为 Service 层（处理业务）、Dao 层（数据库操作）、Entity 层（实体类）、Controller 层(控制层，返回数据给前台页面)</p>
+<h2 id="SpringMVC核心组件及工作原理简单介绍"><a href="#SpringMVC核心组件及工作原理简单介绍" class="headerlink" title="SpringMVC核心组件及工作原理简单介绍"></a>SpringMVC核心组件及工作原理简单介绍</h2><ul>
+<li><strong><code>DispatcherServlet</code><strong>：</strong>核心的中央处理器</strong>，负责接收请求、分发，并给予客户端响应。</li>
+<li><strong><code>HandlerMapping</code><strong>：</strong>处理器映射器</strong>，根据 URL 去匹配查找能处理的 <code>Handler</code> ，并会将请求涉及到的拦截器和 <code>Handler</code> 一起封装。</li>
+<li><strong><code>HandlerAdapter</code><strong>：</strong>处理器适配器</strong>，根据 <code>HandlerMapping</code> 找到的 <code>Handler</code> ，适配执行对应的 <code>Handler</code>；</li>
+<li><strong><code>Handler</code><strong>：</strong>请求处理器</strong>，处理实际请求的处理器。</li>
+<li><strong><code>ViewResolver</code><strong>：</strong>视图解析器</strong>，根据 <code>Handler</code> 返回的逻辑视图 &#x2F; 视图，解析并渲染真正的视图，并传递给 <code>DispatcherServlet</code> 响应客户</li>
+</ul>
+<p><img src="attachment:1e5ec313-bf01-4da3-a1e0-e10b09d15c26:image.png" alt="image.png"></p>
+<p>SpringMVC 的工作流程主要包括以下 6 个步骤：</p>
+<ol>
+<li><strong>请求进入</strong>：用户发送请求，前端控制器 <strong>DispatcherServlet</strong> 拦截请求。</li>
+<li><strong>映射匹配</strong>：DispatcherServlet 通过 <strong>HandlerMapping</strong> 找到对应的处理器（Controller 方法）。</li>
+<li><strong>执行处理器</strong>：调用 <strong>HandlerAdapter</strong> 执行 Controller 里的具体方法，返回 <strong>ModelAndView</strong>（数据+视图）。</li>
+<li><strong>视图解析</strong>：<strong>ViewResolver</strong> 解析返回的视图名称，找到具体的视图（如 JSP、Thymeleaf）。</li>
+<li><strong>视图渲染</strong>：视图模板引擎渲染数据，生成 HTML 页面。</li>
+<li><strong>响应返回</strong>：最终的 HTML 页面返回给用户浏览器。</li>
+</ol>
+<p>简化流程：</p>
+<p><strong>请求 → DispatcherServlet → HandlerMapping → Controller → ViewResolver → 视图渲染 → 响应</strong></p>
+<h1 id="六、Spring-Security"><a href="#六、Spring-Security" class="headerlink" title="六、Spring Security"></a>六、Spring Security</h1><h3 id="简介-1"><a href="#简介-1" class="headerlink" title="简介"></a><strong>简介</strong></h3><p>Spring Security 是一个用于 <strong>身份认证（Authentication）</strong> 和 <strong>授权（Authorization）</strong> 的安全框架，提供一整套安全机制，如 <strong>登录验证、权限管理、会话管理、CSRF 防护、OAuth2</strong> 等，广泛用于保护 <strong>Spring Boot</strong> 应用。</p>
+<hr>
+<h3 id="核心技术"><a href="#核心技术" class="headerlink" title="核心技术"></a><strong>核心技术</strong></h3><ol>
+<li><strong>认证（Authentication）</strong><ul>
+<li>使用 <code>UserDetailsService</code> 进行用户信息查询</li>
+<li>支持多种认证方式：用户名密码、OAuth2、JWT、LDAP、SSO</li>
+<li>可自定义 <code>AuthenticationProvider</code> 进行自定义认证</li>
+</ul>
+</li>
+<li><strong>授权（Authorization）</strong><ul>
+<li>角色&#x2F;权限控制：基于 <code>@PreAuthorize</code>、<code>@Secured</code> 进行方法级别的授权</li>
+<li>URL 级别授权：通过 <code>HttpSecurity</code> 配置请求访问权限</li>
+<li>RBAC（基于角色访问控制）与 ACL（基于访问控制列表）</li>
+</ul>
+</li>
+<li><strong>过滤器链（Filter Chain）</strong><ul>
+<li>Spring Security 内部使用 <strong>Servlet 过滤器链</strong> 处理请求</li>
+<li><code>SecurityFilterChain</code> 控制整个安全逻辑，包括认证、授权、CSRF 保护</li>
+</ul>
+</li>
+<li><strong>会话管理（Session Management）</strong><ul>
+<li>允许配置 <strong>用户会话并发控制</strong>，防止用户重复登录</li>
+<li><strong>记住我（Remember-Me）</strong> 机制</li>
+</ul>
+</li>
+<li><strong>CSRF 防护（Cross-Site Request Forgery）</strong><ul>
+<li>Spring Security 默认开启 CSRF 保护，防止跨站请求伪造</li>
+</ul>
+</li>
+<li><strong>OAuth2 &amp; JWT 支持</strong><ul>
+<li>提供 OAuth2.0 认证与授权</li>
+<li>结合 JWT 实现无状态认证，适用于微服务架构</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3 id="常见应用场景"><a href="#常见应用场景" class="headerlink" title="常见应用场景"></a><strong>常见应用场景</strong></h3><ol>
+<li><strong>企业级 Web 应用安全</strong><ul>
+<li>保护企业管理系统（如 ERP、CRM）</li>
+<li>角色&#x2F;权限分级访问控制</li>
+</ul>
+</li>
+<li><strong>REST API 安全保护</strong><ul>
+<li>结合 JWT 进行无状态认证</li>
+<li>保护 API 免受未授权访问</li>
+</ul>
+</li>
+<li><strong>单点登录（SSO）</strong><ul>
+<li>结合 OAuth2 &#x2F; OpenID Connect 实现 SSO</li>
+<li>适用于微服务架构</li>
+</ul>
+</li>
+<li><strong>微服务安全</strong><ul>
+<li>与 Spring Cloud Security 结合，确保微服务通信安全</li>
+<li>通过 OAuth2 进行服务间认证</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3 id="Spring-Security-相关的类似技术"><a href="#Spring-Security-相关的类似技术" class="headerlink" title="Spring Security 相关的类似技术"></a><strong>Spring Security 相关的类似技术</strong></h3><table>
+<thead>
+<tr>
+<th>技术</th>
+<th>主要特点</th>
+<th>适用场景</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Apache Shiro</strong></td>
+<td>轻量级认证和授权框架，支持加密、会话管理</td>
+<td>适用于小型 Web 项目</td>
+</tr>
+<tr>
+<td><strong>Keycloak</strong></td>
+<td>开源 IAM 解决方案，支持 OAuth2、SSO、LDAP</td>
+<td>适用于企业级用户管理</td>
+</tr>
+<tr>
+<td><strong>OAuth2 &#x2F; OpenID Connect</strong></td>
+<td>标准协议，提供授权与身份认证</td>
+<td>适用于分布式系统和 SSO</td>
+</tr>
+<tr>
+<td><strong>JWT（JSON Web Token）</strong></td>
+<td>轻量级 Token 机制，适合无状态认证</td>
+<td>RESTful API 安全</td>
+</tr>
+</tbody></table>
+<hr>
+<h1 id="七、Spring-Data-JPA"><a href="#七、Spring-Data-JPA" class="headerlink" title="七、Spring Data JPA"></a>七、Spring Data JPA</h1><h3 id="简介-2"><a href="#简介-2" class="headerlink" title="简介"></a><strong>简介</strong></h3><p>Spring Data JPA 是 <strong>Spring 对 JPA（Java Persistence API）</strong> 的封装，提供了 <strong>简化数据库访问</strong> 的方式，使开发者不需要手写大量 SQL 或者实现 DAO 层，而是直接使用 <strong>接口</strong> 进行数据操作。</p>
+<hr>
+<h2 id="核心特性"><a href="#核心特性" class="headerlink" title="核心特性"></a><strong>核心特性</strong></h2><ol>
+<li><p><strong>简化 CRUD 操作</strong>：</p>
+<p> 通过 <code>JpaRepository</code> 或 <code>CrudRepository</code>，无需手写 SQL，即可完成基本数据库操作。</p>
+</li>
+<li><p><strong>方法命名查询（Query Method）</strong>：</p>
+<p> 通过方法命名规则自动生成 SQL，如：</p>
+</li>
+<li><p><strong>自定义 JPQL 或原生 SQL 查询</strong>：</p>
+</li>
+<li><p><strong>分页与排序支持</strong>：</p>
+</li>
+<li><p><strong>动态查询（Specifications）</strong>：</p>
+<p> 可结合 <strong>Criteria API</strong> 实现动态条件查询。</p>
+</li>
+<li><p><strong>乐观锁&#x2F;悲观锁</strong>：</p>
+</li>
+</ol>
+<hr>
+<h2 id="常见应用场景-1"><a href="#常见应用场景-1" class="headerlink" title="常见应用场景"></a><strong>常见应用场景</strong></h2><p>Spring Data JPA 主要适用于 <strong>关系型数据库</strong>（如 MySQL、PostgreSQL）场景：</p>
+<ol>
+<li><strong>企业级应用</strong>（如 <strong>电商、CMS、ERP</strong> 等）</li>
+<li><strong>RESTful API 后端服务</strong>（简化数据库访问逻辑）</li>
+<li><strong>微服务架构中的数据层</strong>（可结合 Spring Cloud 使用）</li>
+<li><strong>数据分析系统</strong>（支持复杂查询、分页等功能）</li>
+</ol>
+<hr>
+<h2 id="其他相似的技术"><a href="#其他相似的技术" class="headerlink" title="其他相似的技术"></a><strong>其他相似的技术</strong></h2><table>
+<thead>
+<tr>
+<th><strong>技术</strong></th>
+<th><strong>特点</strong></th>
+<th><strong>适用场景</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>MyBatis（重点）</strong></td>
+<td>轻量级 ORM，SQL 可控</td>
+<td>复杂 SQL 需求，性能优化</td>
+</tr>
+<tr>
+<td><strong>JPA（原生）</strong></td>
+<td>需要手动编写 EntityManager</td>
+<td>灵活管理事务和查询</td>
+</tr>
+<tr>
+<td><strong>Hibernate</strong></td>
+<td>JPA 的实现，提供更多扩展功能</td>
+<td>适合大型应用</td>
+</tr>
+<tr>
+<td><strong>Spring JDBC</strong></td>
+<td>直接操作数据库，手写 SQL</td>
+<td>高性能需求，避免 ORM 开销</td>
+</tr>
+</tbody></table>
+<h2 id="Spring-Data-JPA-与-MyBatis-的区别"><a href="#Spring-Data-JPA-与-MyBatis-的区别" class="headerlink" title="Spring Data JPA 与 MyBatis 的区别"></a><strong>Spring Data JPA 与 MyBatis 的区别</strong></h2><table>
+<thead>
+<tr>
+<th><strong>对比项</strong></th>
+<th><strong>Spring Data JPA</strong></th>
+<th><strong>MyBatis</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>查询方式</strong></td>
+<td><strong>自动生成 SQL</strong>，可使用 JPQL&#x2F;原生 SQL</td>
+<td><strong>手写 SQL</strong>，自定义 XML&#x2F;注解</td>
+</tr>
+<tr>
+<td><strong>学习成本</strong></td>
+<td><strong>低</strong>，无需关注 SQL 细节</td>
+<td><strong>相对高</strong>，需要掌握 SQL</td>
+</tr>
+<tr>
+<td><strong>性能</strong></td>
+<td>适用于 <strong>CRUD 频繁</strong> 的业务</td>
+<td>适用于 <strong>复杂 SQL、性能优化</strong></td>
+</tr>
+<tr>
+<td><strong>事务支持</strong></td>
+<td>基于 <strong>Spring 事务管理</strong></td>
+<td>需要手动配置事务</td>
+</tr>
+<tr>
+<td><strong>开发效率</strong></td>
+<td><strong>高</strong>，少量代码即可实现 CRUD</td>
+<td><strong>低</strong>，需手写 SQL</td>
+</tr>
+<tr>
+<td><strong>动态查询</strong></td>
+<td><strong>支持 Criteria API</strong></td>
+<td><strong>使用 XML 或动态 SQL</strong></td>
+</tr>
+<tr>
+<td><strong>适用场景</strong></td>
+<td><strong>标准化的 CRUD 业务</strong></td>
+<td><strong>复杂 SQL 查询、性能优化需求</strong></td>
+</tr>
+</tbody></table>
+<p><strong>总结</strong>：</p>
+<ul>
+<li><strong>Spring Data JPA</strong> 适用于 <strong>CRUD 业务多、SQL 复杂度低</strong> 的项目，开发速度快。</li>
+<li><strong>MyBatis</strong> 适用于 <strong>需要精细控制 SQL、复杂查询优化</strong> 的项目，如 <strong>大数据量、复杂业务系统</strong>。</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2025/02/27/docker%E9%83%A8%E7%BD%B2springboot%E9%A1%B9%E7%9B%AE/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Merak Chan">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Merak Chan的技术博客">
+      <meta itemprop="description" content="Stay Gold, Pony Boy!!!">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Merak Chan的技术博客">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2025/02/27/docker%E9%83%A8%E7%BD%B2springboot%E9%A1%B9%E7%9B%AE/" class="post-title-link" itemprop="url">未命名</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2025-02-27 23:42:41" itemprop="dateCreated datePublished" datetime="2025-02-27T23:42:41+08:00">2025-02-27</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
